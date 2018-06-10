@@ -1,5 +1,5 @@
 # Setup
-Add 'rp_translationhelper' in perch/config/apps.php.
+Add `rp_translationhelper` in `perch/config/apps.php`.
 The app requires a variable `lang` (returning a language code such as `en`, `fr`, `de`, etc.) to be available in template.
 
 # Usage
