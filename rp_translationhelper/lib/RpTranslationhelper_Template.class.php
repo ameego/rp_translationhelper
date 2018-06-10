@@ -12,12 +12,11 @@ class RpTranslationhelper_Template extends PerchAPI_TemplateHandler
         $tags = $Template->find_all_tags('translate');
 
         foreach($tags as $Tag) {
-          $exploded = explode("|", $Tag->$lang);
-          $translatedValues[$Tag->id] = count($exploded) > 1 ? $vars[$exploded[1]] : $Tag->$lang;
+          $translatedValues[$Tag->id] = $vars[$Tag->$lang] ? $vars[$Tag->$lang] : $Tag->$lang;
         }
 
         $html = $Template->replace_content_tags('translate', $translatedValues, $html);
-  		}
+      }
 
       return $html;
     }
