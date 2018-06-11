@@ -12,7 +12,7 @@ class RpTranslationhelper_Template extends PerchAPI_TemplateHandler
         $tags = $Template->find_all_tags('translate');
 
         foreach($tags as $Tag) {
-          $translatedValues[$Tag->id] = $vars[$Tag->$lang] ? $vars[$Tag->$lang] : $Tag->$lang;
+          $translatedValues[$Tag->id] = isset($vars[$Tag->$lang]) ? $vars[$Tag->$lang] : $Tag->$lang;
         }
 
         $html = $Template->replace_content_tags('translate', $translatedValues, $html);
