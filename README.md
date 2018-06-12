@@ -1,6 +1,7 @@
 # Setup
-Add `rp_translationhelper` in `perch/config/apps.php`.
-The app requires a variable `lang` (returning a language code such as `en`, `fr`, `de`, etc.) to be available in template.
+- Copy `rp_translationhelper` folder to `perch/apps/`
+- Add `rp_translationhelper` in `perch/config/apps.php`.
+- The app requires a variable `lang` (returning a language code such as `en`, `fr`, `de`, etc.) to be set through PerchSystem::set_var (see https://docs.grabaperch.com/templates/passing-variables-into-templates/).
 
 # Usage
 ## Static string

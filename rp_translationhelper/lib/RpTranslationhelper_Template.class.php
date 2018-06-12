@@ -5,7 +5,7 @@ class RpTranslationhelper_Template extends PerchAPI_TemplateHandler
     public $tag_mask = 'translate';
 
     public function render($vars, $html, $Template) {
-      $lang = $vars['lang'];
+      $lang = PerchSystem::get_var('lang');
 
       if(strpos($html, 'perch:translate') !== false) {
         $translatedValues = array();
