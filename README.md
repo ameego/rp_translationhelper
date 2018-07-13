@@ -8,7 +8,7 @@
 `<perch:translate id="myTranslation1" en="Static string" fr="Contenu static" />`
 
 ## perch:content
-To use dynamic content coming from `<perch:content />`, specify the id in `<perch:template />`.
+To use dynamic content coming from `<perch:content />`, specify the id in `<perch:translate />`.
 
 `<perch:content id="content_en" type="text" />`
 `<perch:content id="content_fr" type="text" />`
