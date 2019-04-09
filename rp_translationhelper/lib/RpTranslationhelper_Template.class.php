@@ -21,9 +21,16 @@ class RpTranslationhelper_Template extends PerchAPI_TemplateHandler
           // explicit mode enabled on $Tag or in config
           if($Tag->explicit || $explicit_mode) {
 
-            if(substr($Tag->$lang, 0, strlen('{')) === '{') {
+            if(substr($Tag->$lang, 0, 1) === '{') {
+
               $lang_id = trim($Tag->$lang, '{}');
-              $value = isset($vars[$lang_id]) ? $vars[$lang_id] : $vars[$Tag->id];
+
+              if(isset($vars[$lang_id])) {
+                $value = $vars[$lang_id];
+              } elseif(isset($vars[$Tag->id])) {
+                $value = $vars[$Tag->id];
+              }
+              
             } else {
               $value = $Tag->$lang;
             }
